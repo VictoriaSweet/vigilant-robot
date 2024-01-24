@@ -1,34 +1,41 @@
-// Import required packages
 const express = require('express');
-const { ApolloServer } = require('apollo-server-express');
-const mongoose = require('mongoose');
+const { ApolloServer } = require('@apollo/server');
+const { expressMiddleware } = require('@apollo/server/express4');
+const path = require('path');
 
-// Load environment varaibles from .env file
-require('dotenv').config();
+const { typeDefs, resolvers } = require('./schemas');
+const db = require('./config/connection');
 
-// Create an instance of Express
+const PORT = process.env.PORT || 3001;
 const app = express();
-
-// Connect to MongoDB using environment variables 
-mongoose.connect(process.env.DB_CONNECTION, {
-    userNewUrlParser: true,
-    useUnifiedTopology: true,
-})
-    .then(() => console.log('Connected to MongoDB'))
-    .catch((error) => console.log(error));
-
-// Create an instance of ApolloServer
 const server = new ApolloServer({
-    // TODO: Add typeDefs and resolvers here
+  typeDefs,
+  resolvers,
 });
 
-// Apply the ApolloServer middleware to Express
-server.applyMiddleware({ app });
+const startApolloServer = async () => {
+  await server.start();
+  
+  app.use(express.urlencoded({ extended: true }));
+  app.use(express.json());
+  
+  app.use('/graphql', expressMiddleware(server));
 
-// Set the port for the server to listen on 
-const port = process.env.DB_PORT || 3000; 
+  // if we're in production, serve client/dist as static assets
+  if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../client/dist')));
 
-// Start the server
-app.listen(port, () => {
-    console.log('Server running on port 3000'); 
-});
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+    });
+  } 
+
+  db.once('open', () => {
+    app.listen(PORT, () => {
+      console.log(`API server running on port ${PORT}!`);
+      console.log(`Use GraphQL at http://localhost:${PORT}/graphql`);
+    });
+  });
+};
+
+startApolloServer();

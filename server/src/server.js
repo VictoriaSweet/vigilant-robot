@@ -26,9 +26,9 @@ const server = new ApolloServer({
 server.applyMiddleware({ app });
 
 // Set the port for the server to listen on 
-const port = process.env.DB_PORT || 4000; 
+const port = process.env.DB_PORT || 3000; 
 
 // Start the server
 app.listen(port, () => {
-    console.log('Server running on port 4000'); 
+    console.log('Server running on port 3000'); 
 });

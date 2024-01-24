@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from 'react';
+import './App.css'; // Ensure the correct path to App.css
+const DreamVacationPlanner = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div>
+      <header>
+        <h1>Dream Vacation Planner</h1>
       </header>
+      <section className="login-signup">
+        <h2>Login or Signup</h2>
+        <form>
+          <label htmlFor="username">Username:</label>
+          <input type="text" id="username" name="username" required />
+          <label htmlFor="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+          <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#">Signup</a></p>
+      </section>
+      {/* Include the rest of the sections as needed */}
+      <footer>
+        &copy; 2024 Dream Vacation Planner
+      </footer>
     </div>
   );
-}
-
-export default App;
+};
+export default DreamVacationPlanner;

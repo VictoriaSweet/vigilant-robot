@@ -10,7 +10,7 @@ This application makes the ease of planning a vacation or getaway seem as if you
 n/a
 
 # Usage
-This application is used as a travel planner, with assistance in booking flights, accomidations and tourist attractions in the region. 
+This application is used as a travel planner, with assistance in booking flights, accommodations and tourist attractions in the region. 
 
 ## Credits
 Trystan Cortez

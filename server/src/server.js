@@ -1,41 +1,18 @@
+// Import the Express module
 const express = require('express');
-const { ApolloServer } = require('@apollo/server');
-const { expressMiddleware } = require('@apollo/server/express4');
-const path = require('path');
 
-const { typeDefs, resolvers } = require('./schemas');
-const db = require('./config/connection');
-
-const PORT = process.env.PORT || 3001;
+// Create an Express application
 const app = express();
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
+
+// Define a route for the root endpoint
+app.get('/', (req, res) => {
+  res.send('here is the route for the endpoint');
 });
 
-const startApolloServer = async () => {
-  await server.start();
-  
-  app.use(express.urlencoded({ extended: true }));
-  app.use(express.json());
-  
-  app.use('/graphql', expressMiddleware(server));
+// Set the port for the server to listen on
+const port = 3000;
 
-  // if we're in production, serve client/dist as static assets
-  if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../client/dist')));
-
-    app.get('*', (req, res) => {
-      res.sendFile(path.join(__dirname, '../client/dist/index.html'));
-    });
-  } 
-
-  db.once('open', () => {
-    app.listen(PORT, () => {
-      console.log(`API server running on port ${PORT}!`);
-      console.log(`Use GraphQL at http://localhost:${PORT}/graphql`);
-    });
-  });
-};
-
-startApolloServer();
+// Start the server and listen on the specified port
+app.listen(port, () => {
+  console.log(`Server is listening on port ${port}`);
+});

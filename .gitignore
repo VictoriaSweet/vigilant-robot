@@ -23,4 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 node_modules
 
-api.js
+/services/api.js
+/apollo.config.js

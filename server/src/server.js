@@ -16,3 +16,9 @@ const port = 3000;
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
 });
+
+// Import custom apollo module
+const startApolloServer = require('./apollo');
+
+// Start the Apollo server
+startApolloServer();

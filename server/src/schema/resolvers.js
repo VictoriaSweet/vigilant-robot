@@ -69,40 +69,6 @@ const resolvers = {
             }
         },
     },
-    Query: {
-        destinations: async () => {
-            try {
-                const destinations = await DestinationModel.find();
-                return destinations;
-            } catch (error) {
-                throw new Error('Error fetching destinations');
-            }
-        },
-        quotes: async () => {
-            try {
-                const quotes = await QuoteModel.find();
-                return quotes;
-            } catch (error) {
-                throw new Error('Error fetching quotes');
-            }
-        },
-        travelPlans: async () => {
-            try {
-                const travelPlans = await TravelPlanModel.find();
-                return travelPlans;
-            } catch (error) {
-                throw new Error('Error fetching travel plans');
-            }
-        },
-        users: async () => {
-            try {
-                const users = await UserModel.find();
-                return users;
-            } catch (error) {
-                throw new Error('Error fetching users');
-            }
-        },
-    },
 };
 
 module.exports = resolvers;

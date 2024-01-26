@@ -76,6 +76,7 @@ const typeDefs = gql`
   }
 
   type Query {
+    destination(name: String!): Destination
     destinations: [Destination]
     quotes: [Quote]
     travelPlans: [TravelPlan]

@@ -2,6 +2,16 @@ const { DestinationModel, QuoteModel, TravelPlanModel, UserModel } = require('./
 
 const resolvers = {
     Query: {
+        //search the database from one destination based on it's name
+        destination: async (parent, { name }) => {
+            try {
+                const destination = await DestinationModel.findOne({ name })
+                return destinations;
+            } catch (error) {
+                throw new Error('Error fetching destination');
+            }
+            
+        },
         destinations: async () => {
             try {
                 const destinations = await DestinationModel.find();

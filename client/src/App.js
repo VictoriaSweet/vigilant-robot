@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css'; // Ensure the correct path to App.css
+
 const DreamVacationPlanner = () => {
   return (
     <div>

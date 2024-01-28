@@ -64,3 +64,43 @@ footer {
 .login-signup button {
   width: 40%;
 }
+:root {
+  /* Light theme colors */
+  --background-color: #FFF8E1;
+  --header-bg-color: #4CAF50;
+  --text-color: #333;
+  --button-bg-color: #4CAF50;
+  --button-hover-bg-color: #45A049;
+  --footer-bg-color: #333;
+}
+
+[data-theme="dark"] {
+  /* Dark theme colors */
+  --background-color: #333;
+  --header-bg-color: #555;
+  --text-color: #FFF;
+  --button-bg-color: #666;
+  --button-hover-bg-color: #777;
+  --footer-bg-color: #222;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: var(--header-bg-color);
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+/* ... rest of the styles, replacing the color values with CSS variables ... */
+
+button:hover {
+  background-color: var(--button-hover-bg-color);
+}

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css'; // Ensure the correct path to App.css
 
 const DreamVacationPlanner = () => {
+  // DreamVacationPlanner component content
   return (
     <div>
       <header>
@@ -25,4 +26,24 @@ const DreamVacationPlanner = () => {
     </div>
   );
 };
-export default DreamVacationPlanner;
+
+function App() {
+  const [theme, setTheme] = useState('light');
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
+
+  return (
+    <div data-theme={theme}>
+      <header>
+        {/* Your header content */}
+        <button onClick={toggleTheme}>Toggle Theme</button>
+      </header>
+      <DreamVacationPlanner />
+      {/* Rest of your component */}
+    </div>
+  );
+}
+
+export default App;

@@ -16,7 +16,8 @@
     },
     "dependencies": {
         "@apollo/server": "^4.10.0",
-        "jsonwebtoken": "^8.5.1", 
+        "apollo-server-express": "^3.0.0",
+        "jsonwebtoken": "^8.5.1",
         "react-scripts": "^3.0.1"
     }
 }

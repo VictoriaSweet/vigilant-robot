@@ -1,4 +1,4 @@
-const { DestinationModel, QuoteModel, TravelPlanModel, UserModel } = require('./models');
+const { DestinationModel, QuoteModel, TravelPlanModel, UserModel } = require('../models');
 
 const resolvers = {
     Query: {
@@ -6,11 +6,11 @@ const resolvers = {
         destination: async (parent, { name }) => {
             try {
                 const destination = await DestinationModel.findOne({ name })
-                return destinations;
+                return destination;
             } catch (error) {
                 throw new Error('Error fetching destination');
             }
-            
+
         },
         destinations: async () => {
             try {

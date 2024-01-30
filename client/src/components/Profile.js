@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../graphql/queries';
 
+
 function Profile() {
   const { loading, error, data } = useQuery(QUERY_USER);
   if (loading) {

@@ -1,4 +1,4 @@
-const axios = require('axios');
+import axios from 'axios'
 
 const options = {
   method: 'GET',
@@ -9,12 +9,11 @@ const options = {
   }
 };
 
+let response = null;
 try {
-	const response = await axios.request(options);
+	response = await axios.request(options);
 	console.log(response.data);
 } catch (error) {
 	console.error(error);
 }
-export default axios.create({
-  baseURL: 'http://localhost:3500'
-});
+export default response;

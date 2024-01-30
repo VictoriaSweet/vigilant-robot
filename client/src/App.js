@@ -1,14 +1,14 @@
 // Import React, necessary hooks, and any additional dependencies you might need
 import React from 'react';
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
 import './App.css'; // Ensure the correct path to App.css
 // Import other components
-import DestinationSearch from './DestinationSearch';
-import PriceQuote from './PriceQuote';
-import TravelPlan from './TravelPlan';
-import VacationDetails from './VacationDetails';
-import Signup from './Signup';
-import Login from './Login'
+import DestinationSearch from './components/DestinationSearch';
+import PriceQuote from './components/PriceQuote';
+import TravelPlan from './components/TravelPlan';
+import VacationDetails from './components/VacationDetails';
+import Signup from './components/Signup';
+import Login from './components/Login'
 // Define the React component
 const DreamVacationPlanner = () => {
   return (
@@ -29,7 +29,7 @@ const DreamVacationPlanner = () => {
           <p>Don't have an account? <Link to="/signup">Signup</Link></p>
         </section>
         {/* Routing for additional components */}
-        <Switch>
+        <Routes>
           {/* Route for Signup page */}
           <Route path="/signup" component={Signup} render={() => (
             <div>
@@ -38,16 +38,16 @@ const DreamVacationPlanner = () => {
               {/* Add your signup form or content here */}
             </div>
           )} />
-          <Route path="/Login" component={Login} />
+          <Route path="./components/Login" component={Login} />
           {/* Route for DestinationSearch */}
-          <Route path="/destination-search" component={DestinationSearch} />
+          <Route path="./components/DestinationSearch" component={DestinationSearch} />
           {/* Route for PriceQuote */}
           <Route path="/price-quote" component={PriceQuote} />
           {/* Route for TravelPlan */}
           <Route path="/travel-plan" component={TravelPlan} />
           {/* Route for VacationDetails */}
           <Route path="/vacation-details" component={VacationDetails} />
-        </Switch>
+        </Routes>
         {/* Include the rest of the sections as needed */}
         <footer>
           &copy; 2024 Dream Vacation Planner

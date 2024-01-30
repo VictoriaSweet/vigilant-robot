@@ -1,0 +1,51 @@
+{
+  "name": "my-react-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@apollo/server": "^4.10.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "audit": "^0.0.6",
+    "axios": "^1.6.7",
+    "express": "^4.18.2",
+    "fix": "^0.0.3",
+    "graphql": "^16.8.1",
+    "mongoose": "^8.1.0",
+    "node": "^21.6.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.3",
+    "react-scripts": "^5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "description": "This application makes the ease of planning a vacation or getaway seem as if you are already on vacation with no worries. You have the ability to view and book flights ✈️, hotels 🏨 and see what the main attractions are in the region you are going to 🗽🎨🏖️. Within this application you are also able to make an itenerary for your trip which will included the activities you are going to be doing as well as flights and hotel stays within the trip. One of the basic elements on the homepage will be the basic travel checklist, making sure you have all the necessities if you were told to get up and go within the next 5 minutes to catch a red eye flight to margaritaville. You are also able to add your own items to the list.",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
+}

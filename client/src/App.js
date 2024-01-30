@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
 import './App.css'; // Ensure the correct path to App.css
 // Import other components
+import Attractions from './components/Attractions';
 import DestinationSearch from './components/DestinationSearch';
 import PriceQuote from './components/PriceQuote';
 import TravelPlan from './components/TravelPlan';
@@ -47,6 +48,8 @@ const DreamVacationPlanner = () => {
           <Route path="/travel-plan" component={TravelPlan} />
           {/* Route for VacationDetails */}
           <Route path="/vacation-details" component={VacationDetails} />
+          <Route path="./components/Attractions" component={Attractions} />
+          {/* Route for Attractions */}
         </Routes>
         {/* Include the rest of the sections as needed */}
         <footer>

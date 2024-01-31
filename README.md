@@ -1,4 +1,4 @@
-# Project 3
+# TravelEZ
 
 Create a page for the user to create an account, log in to the account and also sign out of the account.
 

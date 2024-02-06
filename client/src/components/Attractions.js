@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 // Two methods of fetching data from the Booking Com API: one involving axios, and the other without axios 
 // If anyone is more experienced with using axios and wants to use axios for data fetching, go ahead. 
-import axios from 'axios';
+// import axios from 'axios';
 
 // This will be the Attractions component handling gathering and displaying information about attractions (location, name, etc)
 const Attractions = () => {

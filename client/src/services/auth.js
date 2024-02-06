@@ -27,4 +27,5 @@ class AuthService {
         window.location.reload();
     }
 };
-export default new AuthService();
+const authService = AuthService();
+export default authService;
